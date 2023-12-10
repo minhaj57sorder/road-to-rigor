@@ -417,6 +417,38 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p><a class="reference external" href="https://www.figma.com/file/eOTe2ZxUvxTkZUuW87mLgU/R2R-LM-Activity-1?type=design&amp;node-id=0%3A1&amp;mode=design&amp;t=KtmYhXMmdYowLMpA-1">Figma Link</a></p></li>
 </ul>
 </aside>
+
+
+<!-- Data widget here -->
+<iframe id="cliprepoif" src="/clip-repo/index.html" width="100%" frameborder="0"></iframe>
+
+<script>
+// Script to dynamically adjust the height of the iframe
+document.addEventListener('DOMContentLoaded', function() {
+    var iframe = document.getElementById('cliprepoif');
+    // Function to update the height
+    function updateIframeHeight() {
+        try {
+            var iframeContent = iframe.contentWindow.document.body.scrollHeight;
+            iframe.style.height = iframeContent + 'px';
+        } catch (e) {
+            console.error('Error adjusting iframe height:', e);
+        }
+    }
+    // Event listener for the iframe load
+    iframe.addEventListener('load', function() {
+        updateIframeHeight();
+        // Set up a MutationObserver to listen for changes in the iframe content
+        var observer = new MutationObserver(updateIframeHeight);
+        observer.observe(iframe.contentWindow.document.body, {
+            attributes: true,
+            childList: true,
+            subtree: true
+        });
+    });
+});
+</script>
+
 <div class="tip admonition">
 <p class="admonition-title">Activity: Clip repository</p>
 <p>As a student, I want to be presented with relevant clips of people discussing their real life experiences with rigor and how they’ve been impacted by the lack of it. Should my curiosity be piqued (or should I find that none of the suggested clips be of interest to me), I’d like to be able to browse all clips according to field/career stage/rigor issue. Once I finish a video, I want to be presented with a button that allows me to proceed. Clicking on it should trigger a short discussion session based on the video.</p>
