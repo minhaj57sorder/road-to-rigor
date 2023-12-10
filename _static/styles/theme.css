@@ -1,0 +1,43 @@
+/* Provided by Sphinx's 'basic' theme, and included in the final set of assets */
+@import "../basic.css";
+
+img[src*='#center'] {
+    display: block;
+    padding-top: 20px;
+    background: none!important;
+    margin: auto;
+    width: 75%;
+    height: 75%;
+}
+
+hide.above-input {
+	height: 0px!important;
+	width: 0px!important;
+	opacity: 0;
+}
+
+details.above-input{
+	height: 0px!important;
+	width: 0px!important;
+	opacity: 0;
+}
+
+details.above-input>summary {
+	height: 0px!important;
+	width: 0px!important;
+	opacity: 0;
+}
+
+html[data-theme=dark] .bd-content div.cell_output .text_html, html[data-theme=dark] .bd-content div.cell_output img {
+    background: none!important;
+    border-radius: 0;
+    padding: 0;
+}
+
+div.topbar {
+    display: none;
+}
+
+html[data-theme=dark] img:not(.only-dark):not(.dark-light) {
+    filter:brightness(1) contrast(1)!important;
+}
