@@ -503,10 +503,41 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
     <script>kernelName = 'python3'</script>
 
+    
+<!-- Data widget here -->
+<iframe id="r2r_lm_final_commitment" src="./r2r_lm_final_commitment/index.html" width="100%" frameborder="0"></iframe>
+
+<script>
+// Script to dynamically adjust the height of the iframe
+document.addEventListener('DOMContentLoaded', function() {
+    var iframe = document.getElementById('r2r_lm_final_commitment');
+    // Function to update the height
+    function updateIframeHeight() {
+        try {
+            var iframeContent = iframe.contentWindow.document.body.scrollHeight;
+            iframe.style.height = iframeContent + 'px';
+        } catch (e) {
+            console.error('Error adjusting iframe height:', e);
+        }
+    }
+    // Event listener for the iframe load
+    iframe.addEventListener('load', function() {
+        updateIframeHeight();
+        // Set up a MutationObserver to listen for changes in the iframe content
+        var observer = new MutationObserver(updateIframeHeight);
+        observer.observe(iframe.contentWindow.document.body, {
+            attributes: true,
+            childList: true,
+            subtree: true
+        });
+    });
+});
+</script>
+
                 </article>
               
 
-              
+
               
                 <footer class="bd-footer-article">
                   
